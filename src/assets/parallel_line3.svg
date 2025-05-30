@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<svg width="130.024" height="65" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m149.85,134.85" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m144.66,129.77" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m146.37,131.77" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m3.4,62.78l31,-48.05l93.01,0l-31,48.05l-93.01,0z" fill="#aaaaff" fill-opacity="0.55" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round">bи</path>
+  <line fill="none" id="svg_3" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="26.87" x2="91.4" y1="46.49" y2="46.2"/>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_2" opacity="0.9" stroke="#5f00bf" stroke-width="0" text-anchor="middle" transform="rotate(0.772197 13.8609 55.9172) matrix(1.39297 0 0 1.16491 -10.5579 -22.9055)" x="17.53" xml:space="preserve" y="70.39">α</text>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_7" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="100.73" xml:space="preserve" y="25.98">a</text>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_5" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="87.22" xml:space="preserve" y="42.62">b</text>
+  <line fill="none" id="svg_4" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="39.69" x2="104.21" y1="31.02" y2="30.73"/>
+  <line fill="none" id="svg_6" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="46.29" x2="110.81" y1="9.22" y2="8.94"/>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_8" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="106.42" xml:space="preserve" y="6.03">c</text>
+ </g>
+</svg>

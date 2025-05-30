@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg width="130.024" height="50.80300000000001" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m149.85,134.85" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m144.66,129.77" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m146.37,131.77" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m2.04,49.62l31,-48.05l93.01,0l-31,48.05l-93.01,0z" fill="#aaaaff" fill-opacity="0.55" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1 0 0 1 0 0)"/>
+  <line fill="none" id="svg_3" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" transform="matrix(1 0 0 1 0 0)" x1="31.88" x2="94.71" y1="42.56" y2="9.29"/>
+  <ellipse cx="81.96" cy="33.02" fill="#3f007f" id="svg_8" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_2" opacity="0.9" stroke="#5f00bf" stroke-width="0" text-anchor="middle" transform="rotate(0.772197 12.5138 42.2846) matrix(1.39297 0 0 1.16491 -11.9049 -36.5908)" x="17.53" xml:space="preserve" y="70.39">α</text>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_4" stroke="#5f00bf" stroke-width="0" text-anchor="middle" x="85.28" xml:space="preserve" y="39.91">M</text>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_7" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="86.2" xml:space="preserve" y="10.83">a</text>
+ </g>
+</svg>
