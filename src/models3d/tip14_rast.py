@@ -1,7 +1,6 @@
 import flet as ft
 import threading
 import pygame
-import sys
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -164,16 +163,16 @@ def run_pygame_tip14_rast1(e, stop_event_local):
                 y += 0.1
                 drawText3D(x, y, z, labels[i], font_size)
             else:
-                if y == -1 and x == 1:  # Если вершина нижняя, опускаем текст под куб
+                if y == -1 and x == 1:
                     y -= 0.1
                     x += 0.1
-                elif y == -1 and x == -1:  # Если вершина нижняя, опускаем текст под куб
+                elif y == -1 and x == -1:
                     y -= 0.1
                     x -= 0.1
-                elif y == 1 and x == 1:  # Если вершина нижняя, опускаем текст под куб
+                elif y == 1 and x == 1:
                     y += 0.05
                     x += 0.05
-                elif y == 1 and x == -1:  # Если вершина нижняя, опускаем текст под куб
+                elif y == 1 and x == -1:
                     y += 0.05
                     x -= 0.05
                 drawText3D(x, y, z, labels[i], font_size)

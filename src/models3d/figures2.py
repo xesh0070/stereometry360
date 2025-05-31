@@ -589,7 +589,7 @@ def cylinder():
         glEnd()
 
     # Рисуем боковые линии
-    glColor3f(0.5, 0.433, 0.72)  # Белый цвет для каркаса
+    glColor3f(0.5, 0.433, 0.72)
     glBegin(GL_LINES)
     for i in range(num_segments):
         angle = 2 * math.pi * i / num_segments
@@ -600,7 +600,7 @@ def cylinder():
     glEnd()
 
     # Рисуем фиолетовую поверхность нижнего основания
-    glColor4f(0.6471, 0.5412, 0.9843, 0.4)  # Цвет фиолетовый + прозрачность
+    glColor4f(0.6471, 0.5412, 0.9843, 0.4)
     for i in range(num_segments):
         angle1 = 2 * math.pi * i / num_segments
         angle2 = 2 * math.pi * (i + 1) / num_segments
@@ -634,8 +634,8 @@ def cylinder():
         glVertex3f(x1, height / 2, z1)
         glEnd()
 
-    # Рисуем белый каркас (линии) на основаниях
-    glColor3f(0.5, 0.433, 0.72)  # Белый цвет для каркаса
+    # Рисуем каркас на основаниях
+    glColor3f(0.5, 0.433, 0.72)
     for i in range(num_segments):
         angle1 = 2 * math.pi * i / num_segments
         angle2 = 2 * math.pi * (i + 1) / num_segments
@@ -686,8 +686,6 @@ def run_pygame(draw_function, persp):
 
     # Проверка, открыто ли уже окно Pygame
     if pygame_window_open:
-        print("Окно Pygame уже открыто. Новое окно не будет создано.")
-
         return
 
 

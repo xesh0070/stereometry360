@@ -4,17 +4,15 @@ import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-import math
-
-
 
 def axy():
+    # задаю координаты двух пересекающихся плоскостей
     vertices = ((-1, 0, 0.8), (1, 0, 0.8),
                 (1, 0, -0.8), (-1, 0, -0.8),
                 (-0.2, 1, -0.8), (-0.2, 1, 0.8),
                 (0.2, -1, 0.8), (0.2, -1, -0.8),
                 (0, 0, -0.8), (0, 0, 0.8))
-    edges = ((8, 9), )
+    edges = ((8, 9),) #пересечения координат
     faces1 = ((0, 1, 2, 3),)
     faces2 = ((4, 5, 6, 7),)
 
@@ -52,12 +50,6 @@ def drawText3D(x, y, z, text, font_size):
     glRasterPos3f(x, y, z)
     glDrawPixels(text_surface.get_width(), text_surface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, text_data)
 
-def drawText(x, y, text, font):
-    textSurface = font.render(text, True, (255, 255, 255, 0.)).convert_alpha()
-    textData = pygame.image.tostring(textSurface, "RGBA", True)
-    glWindowPos2d(x, y)
-    glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, textData)
-
 pygame_window_running = False
 pygame_thread = None
 stop_event = threading.Event()
@@ -65,21 +57,12 @@ def run_axy3(e, stop_event_local):
     global pygame_window_running
     pygame_window_running = True
 
-
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
+
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
     pygame.display.set_caption('Stereometry 360°')
-
-    font = pygame.font.SysFont('LaTeX', 20)
-    font2 = pygame.font.SysFont('Calibri', 20)
-    font3 = pygame.font.SysFont('Calibri', 24)
-
-    # Менеджер интерфейса
-
 
     glEnable(GL_BLEND)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
@@ -132,13 +115,10 @@ def run_axy3(e, stop_event_local):
         font_size = max(20, 20 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
-            if y == 0 :  # Если вершина нижняя, опускаем текст под куб
-                y -= 0.04
-
+            if y == 0 :
+                y+= 0.04
             drawText3D(x, y, z, labels[i], font_size)
 
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.",font)
 
         glPopMatrix()
         pygame.display.flip()

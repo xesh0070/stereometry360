@@ -62,12 +62,6 @@ def drawText3D(x, y, z, text, font_size):
     glRasterPos3f(x, y, z)
     glDrawPixels(text_surface.get_width(), text_surface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, text_data)
 
-def drawText(x, y, text, font):
-    textSurface = font.render(text, True, (255, 255, 255, 0.)).convert_alpha()
-    textData = pygame.image.tostring(textSurface, "RGBA", True)
-    glWindowPos2d(x, y)
-    glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, textData)
-
 pygame_window_running = False
 pygame_thread = None
 stop_event = threading.Event()
@@ -77,14 +71,11 @@ def run_sled1(e, stop_event_local):
 
 
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
+
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
     pygame.display.set_caption('Stereometry 360°')
-
-    font = pygame.font.SysFont('LaTeX', 20)
 
 
     glEnable(GL_BLEND)
@@ -100,7 +91,7 @@ def run_sled1(e, stop_event_local):
     clock = pygame.time.Clock()
     busy = True
     vertices = (
-        (0.6, 0, -0.6), (0.7, 0.0, 0.5),  # Шар 1
+        (0.6, 0, -0.6), (0.7, 0.0, 0.5),
 
     )
     labels = ["a", "M"]
@@ -136,17 +127,11 @@ def run_sled1(e, stop_event_local):
         axy()
         draw_spheres()
         font_size = max(20, 20 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
-        for i, vertex in enumerate(vertices):
+        for i, vertex in enumerate(vertices): # Отрисовка букв для обозначения точек
             x, y, z = vertex
-            if y == 0 :  # Если вершина нижняя, опускаем текст под куб
+            if y == 0 :
                 y -= 0.04
-
-
-
             drawText3D(x, y, z, labels[i], font_size)
-
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.",font)
 
         glPopMatrix()
         pygame.display.flip()

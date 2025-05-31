@@ -188,13 +188,13 @@ def run_pygame_tip14_ygol1_sv(e, stop_event_local):
         font_size = max(20, 34 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
-            if z == 0.9 and x == 0.73:  # Если вершина нижняя, опускаем текст под куб
+            if z == 0.9 and x == 0.73:
                 z += 0.05
                 x += 0.05
-            elif z == -1.08 and x == 0.41:  # Если вершина нижняя, опускаем текст под куб
+            elif z == -1.08 and x == 0.41:
                 z -= 0.05
                 x += 0.05
-            elif z == 0.19 and x == -1.14:  # Если вершина нижняя, опускаем текст под куб
+            elif z == 0.19 and x == -1.14:
                 z += 0.05
                 x -= 0.05
 

@@ -1,7 +1,6 @@
 import flet as ft
 import threading
 import pygame
-import sys
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -83,8 +82,7 @@ def run_pygame1(e, stop_event_local):
 
     pygame_window_running = True
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 1530, 793
+
     screen = (1530, 793)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
 
@@ -141,16 +139,16 @@ def run_pygame1(e, stop_event_local):
         font_size = max(10, 20 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
-            if y == -1 and x == 1:  # Если вершина нижняя, опускаем текст под куб
+            if y == -1 and x == 1:
                 y -= 0.1
                 x += 0.1
-            elif y == -1 and x == -1:  # Если вершина нижняя, опускаем текст под куб
+            elif y == -1 and x == -1:
                 y -= 0.1
                 x -= 0.1
-            elif y == 1 and x == 1:  # Если вершина нижняя, опускаем текст под куб
+            elif y == 1 and x == 1:
                 y += 0.1
                 x += 0.1
-            elif y == 1 and x == -1:  # Если вершина нижняя, опускаем текст под куб
+            elif y == 1 and x == -1:
                 y += 0.1
                 x -= 0.1
             drawText3D(x, y, z, labels[i], font_size)
@@ -174,7 +172,6 @@ def run_pygame1(e, stop_event_local):
 
 
         glPopMatrix()
-        #draw_button(font)
         pygame.display.flip()
         clock.tick(60)
 

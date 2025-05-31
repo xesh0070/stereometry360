@@ -32,9 +32,12 @@ from models3d.axy import run_axy1
 from models3d.axy2 import run_axy2
 from models3d.axy3 import run_axy3
 from models3d.sled_axy1 import run_sled1
+from models3d.axy_task2 import run_axy_task2
+from models3d.axy_task3 import run_axy_task3
+from models3d.axy_task4 import run_axy_task4
+
 from catalog_page import get_catalog_container
 from src.theory_part1_axy import axy_task, sled_axy, axy
-
 from theory_part2 import lines_arrangement, parallel_line_plane, parallel_line, parallel_planes, polyhedrons, perpendicular_line_plane
 
 # Сохранение решённых задач типа 3.
@@ -149,8 +152,7 @@ def main(page: ft.Page):
                     item.checked = light_theme_checked
                 elif item.text == "Темная тема":
                     item.checked = dark_theme_checked
-                elif item.text == "Редактировать":
-                    item.checked = red_theme_checked
+
             theme_menu.update()
 
         def handle_open_model(e):
@@ -177,12 +179,7 @@ def main(page: ft.Page):
                     on_click=lambda e: check_item_clicked(e, "dark"),
 
                 ),
-                ft.PopupMenuItem(
-                    text="Редактировать",
-                    checked=False,
-                    on_click=lambda e: check_item_clicked(e, "red"),
 
-                ),
             ],
             icon=ft.Icons.MORE_VERT, style=ft.ButtonStyle(color="#4E426D"),
             tooltip="Выбор темы"
@@ -2988,7 +2985,7 @@ def main(page: ft.Page):
         sled_axy(sled_a1, sled_a2, details1, page, start_pygame_with_sled1, start_pygame_with_axy2, e)
 
     def show_axy_task(e):
-        axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with_axy2, start_pygame_with_axy3, e)
+        axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with_axy2, start_pygame_with_axy3, start_pygame_with_axy_task2,start_pygame_with_axy_task3,start_pygame_with_axy_task4, e)
 
     def show_parallel_line(e):
         parallel_line(e, page, details1)
@@ -3230,9 +3227,16 @@ def main(page: ft.Page):
     def start_pygame_with_sled1(e):
         run_with_check(run_sled1, e)
 
+    def start_pygame_with_axy_task2(e):
+        run_with_check(run_axy_task2, e)
+    def start_pygame_with_axy_task3(e):
+        run_with_check(run_axy_task3, e)
+    def start_pygame_with_axy_task4(e):
+        run_with_check(run_axy_task4, e)
+
     # Изображения
     var = "assets/прекрасное творение вари 4.jpg"
-    #image_base64 = "resources/objekte.png"
+
     ico = "D:/pythonProject1/png/ico.ico"
     image_base64_2 = "D:/pythonProject1/png/cube0.jpg"
     cube2_2 = "assets/cube0_2.jpg"

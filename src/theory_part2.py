@@ -8,6 +8,9 @@ sled_a2 = "assets/sled_a2.svg"
 parallel_line1 = "assets/parallel_line1.svg"
 parallel_line_lemma = "assets/parallel_line_lemma.svg"
 parallel_line3 = "assets/parallel_line3.svg"
+parallel_line_plane1 ="assets/parallel_line_plane1.svg"
+parallel_line_plane2 ="assets/parallel_line_plane2.svg"
+parallel_line_plane3 ="assets/parallel_line_plane3.svg"
 
 def lines_arrangement(e, page, details1):
     # Создаем контейнеры для доказательств, которые будут скрыты/показаны
@@ -384,46 +387,10 @@ def parallel_line_plane(e, page, details1):
                                 col={"sm": 9, "md": 5},
                                 controls=[
                                     ft.Container(width=10, height=10),
-                                    ft.Image(sled_a1, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                    ft.Image(parallel_line_plane1, width=70, height=120, fit=ft.ImageFit.CONTAIN),
                                     ft.ElevatedButton(
                                         "Открыть 3D модель",
                                         # on_click=lambda e: start_pygame_with_parallel_line_plane1(e),
-                                        style=ft.ButtonStyle(color="#4E426D"),
-                                        width=180
-                                    ),
-                                ],
-                                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                                spacing=10,
-                            ),
-                        ],
-                        spacing=20,
-                        vertical_alignment=ft.CrossAxisAlignment.START,
-                    ),
-
-                    ft.ResponsiveRow(
-                        controls=[
-                            ft.Column(
-                                col={"sm": 12, "md": 7},
-                                controls=[
-                                    ft.Text("Теорема о параллельной прямой в плоскости", size=24,
-                                            weight=ft.FontWeight.BOLD),
-                                    ft.Text(
-                                        "Если прямая параллельна плоскости, то в этой плоскости существует прямая, параллельная данной, и притом только одна, проходящая через любую точку плоскости.",
-                                        size=20, weight=ft.FontWeight.W_500
-                                    ),
-                                    proof_button1,
-                                    proof_container1,
-                                ],
-                                spacing=5,
-                            ),
-                            ft.Column(
-                                col={"sm": 9, "md": 5},
-                                controls=[
-                                    ft.Container(width=10, height=10),
-                                    ft.Image(sled_a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
-                                    ft.ElevatedButton(
-                                        "Открыть 3D модель",
-                                        # on_click=lambda e: start_pygame_with_parallel_line_plane2(e),
                                         style=ft.ButtonStyle(color="#4E426D"),
                                         width=180
                                     ),
@@ -456,7 +423,7 @@ def parallel_line_plane(e, page, details1):
                                 col={"sm": 9, "md": 5},
                                 controls=[
                                     ft.Container(width=10, height=10),
-                                    ft.Image(sled_a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                    ft.Image(parallel_line_plane2, width=70, height=120, fit=ft.ImageFit.CONTAIN),
                                     ft.ElevatedButton(
                                         "Открыть 3D модель",
                                         # on_click=lambda e: start_pygame_with_parallel_line_plane3(e),
@@ -491,7 +458,7 @@ def parallel_line_plane(e, page, details1):
                                 col={"sm": 9, "md": 5},
                                 controls=[
                                     ft.Container(width=10, height=10),
-                                    ft.Image(sled_a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                    ft.Image(parallel_line_plane3, width=70, height=140, fit=ft.ImageFit.CONTAIN),
                                     ft.ElevatedButton(
                                         "Открыть 3D модель",
                                         # on_click=lambda e: start_pygame_with_parallel_line_plane4(e),
@@ -721,7 +688,7 @@ def parallel_line(e, page, details1):
                                     col={"sm": 9, "md": 5},
                                     controls=[
                                         ft.Container(width=10, height=10),
-                                        ft.Image(parallel_line_lemma, width=70, height=140, fit=ft.ImageFit.CONTAIN),
+                                        ft.Image(parallel_line_lemma, width=80, height=160, fit=ft.ImageFit.CONTAIN),
                                         ft.ElevatedButton(
                                             "Открыть 3D модель",
 

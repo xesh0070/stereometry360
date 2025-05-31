@@ -88,8 +88,7 @@ def run_pygame_tip3_pir1(e, stop_event_local):
     pygame_window_running = True
 
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
+
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
@@ -152,22 +151,20 @@ def run_pygame_tip3_pir1(e, stop_event_local):
         font_size = max(10, 24 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
-            if y == -1 and x == 1:  # Если вершина нижняя, опускаем текст под куб
+            if y == -1 and x == 1:
                 y -= 0.1
                 x += 0.1
-            elif y == -1 and x == -1:  # Если вершина нижняя, опускаем текст под куб
+            elif y == -1 and x == -1:
                 y -= 0.1
                 x -= 0.1
-            elif y == 1 and x == 1:  # Если вершина нижняя, опускаем текст под куб
+            elif y == 1 and x == 1:
                 y += 0.1
                 x += 0.1
-            elif y == 1 and x == -1:  # Если вершина нижняя, опускаем текст под куб
+            elif y == 1 and x == -1:
                 y += 0.1
                 x -= 0.1
             drawText3D(x, y, z, labels[i], font_size)
 
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.",font)
 
         glPopMatrix()
         pygame.display.flip()

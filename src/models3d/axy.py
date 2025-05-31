@@ -9,27 +9,27 @@ import math
 
 
 def axy():
-    # Определение координат вершин
+    # Определение координат для отрисовки плоскости
     vertices = ((-1, 0, 0.8), (1, 0, 0.8),
                 (1, 0, -0.8), (-1, 0, -0.8),
             )
 
-    # Определение граней куба
+    # Определение граней плоскости
     faces = ((0, 1, 2, 3),)
 
     glEnable(GL_BLEND)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
-    glBegin(GL_QUADS)  # Отрисовка граней
+    glBegin(GL_QUADS)  # Отрисовка граней плоскости
     for face in faces:
-        glColor4fv((0.6471, 0.5412, 0.9843, 0.6))  # Добавляем альфа-канал (0.3 для прозрачности)
+        glColor4fv((0.6471, 0.5412, 0.9843, 0.6))  # Добавляем альфа-канал (для прозрачности)
         for vertex in face:
             glVertex3fv(vertices[vertex])
     glEnd()
 
 
 def draw_spheres():
-    # Параметры шаров: (x, y, z)
+    # координаты шаров (для обозначения точек)
     spheres = [
         (-0.49, 0.0, 0.25),  # Шар 1
         (0, 0.0, -0.27),  # Шар 2
@@ -38,7 +38,7 @@ def draw_spheres():
 
     radius = 0.015
     quadric = gluNewQuadric()
-    glColor3fv(( 0.5255,  0.0275, 0.9608))  # Красный цвет для шаров
+    glColor3fv(( 0.5255,  0.0275, 0.9608))  #  цвет для шаров
 
     for x, y, z in spheres:
         glPushMatrix()
@@ -53,11 +53,6 @@ def drawText3D(x, y, z, text, font_size):
     glRasterPos3f(x, y, z)
     glDrawPixels(text_surface.get_width(), text_surface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, text_data)
 
-def drawText(x, y, text, font):
-    textSurface = font.render(text, True, (255, 255, 255, 0.)).convert_alpha()
-    textData = pygame.image.tostring(textSurface, "RGBA", True)
-    glWindowPos2d(x, y)
-    glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, textData)
 
 pygame_window_running = False
 pygame_thread = None
@@ -65,20 +60,11 @@ stop_event = threading.Event()
 def run_axy1(e, stop_event_local):
     global pygame_window_running
     pygame_window_running = True
-
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
     pygame.display.set_caption('Stereometry 360°')
-
-    font = pygame.font.SysFont('LaTeX', 20)
-    font2 = pygame.font.SysFont('Calibri', 20)
-    font3 = pygame.font.SysFont('Calibri', 24)
-
-
 
     glEnable(GL_BLEND)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
@@ -93,11 +79,11 @@ def run_axy1(e, stop_event_local):
     clock = pygame.time.Clock()
     busy = True
     vertices = (
-        (-0.49, 0.0, 0.25),  # Шар 1
-        (0, 0.0, -0.27),  # Шар 2
-        (0.55, 0.0, 0.53)  # Шар 3
+        (-0.49, 0.0, 0.25),
+        (0, 0.0, -0.27),
+        (0.55, 0.0, 0.53)
     )
-    labels = ["A", "B", "C"]
+    labels = ["A", "B", "C"] # Обозначения для точек
     glClearColor(1.0, 1.0, 1.0, 1.0)
     while busy:
         mouse_buttons = pygame.mouse.get_pressed()
@@ -128,18 +114,13 @@ def run_axy1(e, stop_event_local):
 
         axy()
         draw_spheres()
-        font_size = max(20, 20 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
+        font_size = max(20, 20 * (1 + zoom))  # Изменение размера текста в зависимости от изменения пользователем масштаба
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
-            if y == 0 :  # Если вершина нижняя, опускаем текст под куб
-                y -= 0.04
-
-
+            if y == 0 :
+                y += 0.04
 
             drawText3D(x, y, z, labels[i], font_size)
-
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.",font)
 
         glPopMatrix()
         pygame.display.flip()
@@ -149,7 +130,7 @@ def run_axy1(e, stop_event_local):
     pygame_window_running = False
 
 def start_pygame(e):
-    threading.Thread(target=run_pygame1_1, args=(e,)).start()
+    threading.Thread(target=run_axy1, args=(e,)).start()
 
 def main():
     ft.app(target=app, port=8550)

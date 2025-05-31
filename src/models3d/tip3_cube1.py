@@ -1,7 +1,6 @@
 import flet as ft
 import threading
 import pygame
-import sys
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -68,11 +67,7 @@ def drawText3D(x, y, z, text, font_size):
     glRasterPos3f(x, y, z)
     glDrawPixels(text_surface.get_width(), text_surface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, text_data)
 
-def drawText(x, y, text, font):
-    textSurface = font.render(text, True, (255, 255, 255, 0.)).convert_alpha()
-    textData = pygame.image.tostring(textSurface, "RGBA", True)
-    glWindowPos2d(x, y)
-    glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, textData)
+
 
 pygame_window_running = False
 pygame_thread = None
@@ -84,8 +79,7 @@ def run_pygame1_1(e, stop_event_local):
 
 
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
+
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
@@ -143,8 +137,7 @@ def run_pygame1_1(e, stop_event_local):
         cube()
         font_size = max(10, 24 * (1 + zoom))  # Изменение размера текста в зависимости от масштаба
 
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.",font)
+
 
         glPopMatrix()
         pygame.display.flip()

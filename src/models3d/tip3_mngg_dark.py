@@ -1,7 +1,6 @@
 import flet as ft
 import threading
 import pygame
-import sys
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -67,11 +66,7 @@ def drawText3D(x, y, z, text, font_size):
     glRasterPos3f(x, y, z)
     glDrawPixels(text_surface.get_width(), text_surface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, text_data)
 
-def drawText(x, y, text, font):
-    textSurface = font.render(text, True, (255, 255, 255, 0.)).convert_alpha()
-    textData = pygame.image.tostring(textSurface, "RGBA", True)
-    glWindowPos2d(x, y)
-    glDrawPixels(textSurface.get_width(), textSurface.get_height(), GL_RGBA, GL_UNSIGNED_BYTE, textData)
+
 
 pygame_window_running = False
 pygame_thread = None
@@ -81,18 +76,11 @@ def run_pygame_tip3_mngg_dark(e, stop_event_local):
     pygame_window_running = True
 
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
+
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
     pygame.display.set_caption('Stereometry 360°')
-
-    font = pygame.font.SysFont('Verdana', 18)
-    font2 = pygame.font.SysFont('Calibri', 20)
-    font3 = pygame.font.SysFont('Calibri', 24)
-
-
 
     glEnable(GL_BLEND)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
@@ -148,19 +136,18 @@ def run_pygame_tip3_mngg_dark(e, stop_event_local):
         font_size = max(12, 24 * (6 + zoom))  # Изменение размера текста в зависимости от масштаба
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
-            if x == -2.5:  # Если вершина нижняя, опускаем текст под куб
+            if x == -2.5:
 
                 x -= 0.25
-            elif x == 0:  # Если вершина нижняя, опускаем текст под куб
+            elif x == 0:
                 y -= 0.45
 
-            elif x == -0.5:  # Если вершина нижняя, опускаем текст под куб
+            elif x == -0.5:
                 x += 0.15
 
             drawText3D(x, y, z, labels[i], font_size)
 
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.", font)
+
 
         glPopMatrix()
         pygame.display.flip()

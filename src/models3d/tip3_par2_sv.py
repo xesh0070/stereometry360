@@ -1,7 +1,6 @@
 import flet as ft
 import threading
 import pygame
-import sys
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -106,8 +105,7 @@ def run_pygame_tip3_par2_sv(e, stop_event_local):
     pygame_window_running = True
 
     pygame.init()
-    FPS = 60
-    WIDTH, HEIGHT = 800, 600
+
     screen = (800, 600)
     pygame.display.set_mode(screen, DOUBLEBUF | OPENGL)
     pygame.display.set_icon(pygame.image.load("./assets/objekte.png"))
@@ -171,28 +169,17 @@ def run_pygame_tip3_par2_sv(e, stop_event_local):
         for i, vertex in enumerate(vertices):
             x, y, z = vertex
 
-            if z == -2.5 and y == -1.5:  # Если вершина нижняя, опускаем текст под куб
+            if z == -2.5 and y == -1.5:
                 z -= 0.2
 
                 if x == 2:
                     x += 0.2
                 else:
                     x -= 0.2
-            elif i == 10:  # Если вершина нижняя, опускаем текст под куб
+            elif i == 10:
                 z += 0.2
 
-            elif z == 2.5 and y == -1.5:  # Если вершина нижняя, опускаем текст под куб
-                z += 0.2
-                if x == 2:
-                    x += 0.2
-                else:
-                    x -= 0.2
-
-
-
-
-            elif z == 2.5 and y == 1.5:  # Если вершина нижняя, опускаем текст под куб
-
+            elif z == 2.5 and y == -1.5:
                 z += 0.2
                 if x == 2:
                     x += 0.2
@@ -200,7 +187,18 @@ def run_pygame_tip3_par2_sv(e, stop_event_local):
                     x -= 0.2
 
 
-            elif z == -2.5 and y == 1.5:  # Если вершина нижняя, опускаем текст под куб
+
+
+            elif z == 2.5 and y == 1.5:
+
+                z += 0.2
+                if x == 2:
+                    x += 0.2
+                else:
+                    x -= 0.2
+
+
+            elif z == -2.5 and y == 1.5:
 
                 z -= 0.2
                 if x == 2:
@@ -212,8 +210,6 @@ def run_pygame_tip3_par2_sv(e, stop_event_local):
 
 
 
-        drawText(30, 750, " Тип 3. Задача №1", font)
-        drawText(30, 720, " Площадь поверхности куба равна 18. Найдите его диагональ.",font)
 
         glPopMatrix()
         pygame.display.flip()

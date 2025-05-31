@@ -2,7 +2,7 @@ import flet
 import flet as ft
 
 
-def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with_axy2, start_pygame_with_axy3, e):
+def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with_axy2, start_pygame_with_axy3, start_pygame_with_axy_task2,start_pygame_with_axy_task3,start_pygame_with_axy_task4, e):
     details0.content = None
     page.update()
     global show_solution
@@ -16,7 +16,7 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
             answer_input.hint_text = " Ответ верный! 🎉"
         else:
             answer_input.border_color = ft.Colors.RED
-            answer_input.hint_text = f"Ответ '{user_answer}' неверный. ❌"
+            answer_input.hint_text = f"Ответ неверный. ❌"
         answer_input.value = ""
         page.update()
 
@@ -27,7 +27,7 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
             answer_input2.hint_text = " Ответ верный! 🎉"
         else:
             answer_input2.border_color = ft.Colors.RED
-            answer_input2.hint_text = f"Ответ '{user_answer}' неверный. ❌"
+            answer_input2.hint_text = f"Ответ неверный. ❌"
         answer_input2.value = ""
         page.update()
 
@@ -38,7 +38,7 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
             answer_input3.hint_text = " Ответ верный! 🎉"
         else:
             answer_input3.border_color = ft.Colors.RED
-            answer_input3.hint_text = f"Ответ '{user_answer}' неверный. ❌"
+            answer_input3.hint_text = f"Ответ неверный. ❌"
         answer_input3.value = ""
         page.update()
 
@@ -108,19 +108,6 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
                 size=18,
                 weight=ft.FontWeight.W_400
             ),
-            ft.Column(
-                controls=[
-                    ft.ElevatedButton(
-                        "Открыть 3D модель",
-                        on_click=lambda e: start_pygame_with_axy1(e),
-                        style=ft.ButtonStyle(color="#4E426D"),
-                        width=180,
-                        visible=False
-                    )
-                ],
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=10
-            )
         ]),
         visible=False
     )
@@ -132,19 +119,6 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
                 size=18,
                 weight=ft.FontWeight.W_400
             ),
-            ft.Column(
-                controls=[
-                    ft.ElevatedButton(
-                        "Открыть 3D модель",
-                        on_click=lambda e: start_pygame_with_axy2(e),
-                        style=ft.ButtonStyle(color="#4E426D"),
-                        width=180,
-                        visible=False
-                    )
-                ],
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=10
-            )
         ]),
         visible=False
     )
@@ -156,19 +130,6 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
                 size=18,
                 weight=ft.FontWeight.W_400
             ),
-            ft.Column(
-                controls=[
-                    ft.ElevatedButton(
-                        "Открыть 3D модель",
-                        on_click=lambda e: start_pygame_with_axy2(e),
-                        style=ft.ButtonStyle(color="#4E426D"),
-                        width=180,
-                        visible=False
-                    )
-                ],
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=10
-            )
         ]),
         visible=False
     )
@@ -189,77 +150,96 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
                 size=18,
                 weight=ft.FontWeight.W_400
             ),
-            ft.Column(
-                controls=[
-                    ft.ElevatedButton(
-                        "Открыть 3D модель",
-                        on_click=lambda e: start_pygame_with_axy3(e),
-                        style=ft.ButtonStyle(color="#4E426D"),
-                        width=180,
-                        visible=False
-                    )
-                ],
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=10
-            )
         ]),
         visible=False
     )
 
-    # Кнопки для показа решений
-    solution_button1 = ft.TextButton(
-        "Показать решение",
-        style=ft.ButtonStyle(color="#4E426D"),
-    )
+    # Кнопки для показа решений и 3D моделей
+    solution_button1 = ft.Row([
+        ft.TextButton(
+            "Показать решение",
+            style=ft.ButtonStyle(color="#4E426D"),
+        ),
+        ft.ElevatedButton(
+            "Открыть 3D модель",
+            on_click=lambda e: start_pygame_with_axy1(e),
+            style=ft.ButtonStyle(color="#4E426D"),
+            width=180,
+            visible=False
+        )
+    ], spacing=10)
 
-    solution_button2 = ft.TextButton(
-        "Показать решение",
-        style=ft.ButtonStyle(color="#4E426D"),
-    )
+    solution_button2 = ft.Row([
+        ft.TextButton(
+            "Показать решение",
+            style=ft.ButtonStyle(color="#4E426D"),
+        ),
+        ft.ElevatedButton(
+            "Открыть 3D модель",
+            on_click=lambda e: start_pygame_with_axy_task2(e),
+            style=ft.ButtonStyle(color="#4E426D"),
+            width=180,
+            visible=False
+        )
+    ], spacing=10)
 
-    solution_button3 = ft.TextButton(
-        "Показать решение",
-        style=ft.ButtonStyle(color="#4E426D"),
-    )
+    solution_button3 = ft.Row([
+        ft.TextButton(
+            "Показать решение",
+            style=ft.ButtonStyle(color="#4E426D"),
+        ),
+        ft.ElevatedButton(
+            "Открыть 3D модель",
+            on_click=lambda e: start_pygame_with_axy_task3(e),
+            style=ft.ButtonStyle(color="#4E426D"),
+            width=180,
+            visible=False
+        )
+    ], spacing=10)
 
-    solution_button4 = ft.TextButton(
-        "Показать решение",
-        style=ft.ButtonStyle(color="#4E426D"),
-    )
+    solution_button4 = ft.Row([
+        ft.TextButton(
+            "Показать решение",
+            style=ft.ButtonStyle(color="#4E426D"),
+        ),
+        ft.ElevatedButton(
+            "Открыть 3D модель",
+            on_click=lambda e: start_pygame_with_axy_task4(e),
+            style=ft.ButtonStyle(color="#4E426D"),
+            width=180,
+            visible=False
+        )
+    ], spacing=10)
 
     # Функции для показа/скрытия решений
     def show_solution(e):
         task1_ansv.visible = not task1_ansv.visible
-        for control in task1_ansv.content.controls[1].controls:
-            control.visible = task1_ansv.visible
-        solution_button1.text = "Спрятать решение" if task1_ansv.visible else "Показать решение"
+        solution_button1.controls[1].visible = task1_ansv.visible
+        solution_button1.controls[0].text = "Спрятать решение" if task1_ansv.visible else "Показать решение"
         page.update()
 
     def show_solution2(e):
         task2_ansv.visible = not task2_ansv.visible
-        for control in task2_ansv.content.controls[1].controls:
-            control.visible = task2_ansv.visible
-        solution_button2.text = "Спрятать решение" if task2_ansv.visible else "Показать решение"
+        solution_button2.controls[1].visible = task2_ansv.visible
+        solution_button2.controls[0].text = "Спрятать решение" if task2_ansv.visible else "Показать решение"
         page.update()
 
     def show_solution3(e):
         task3_ansv.visible = not task3_ansv.visible
-        for control in task3_ansv.content.controls[1].controls:
-            control.visible = task3_ansv.visible
-        solution_button3.text = "Спрятать решение" if task3_ansv.visible else "Показать решение"
+        solution_button3.controls[1].visible = task3_ansv.visible
+        solution_button3.controls[0].text = "Спрятать решение" if task3_ansv.visible else "Показать решение"
         page.update()
 
     def show_solution4(e):
         task4_ansv.visible = not task4_ansv.visible
-        for control in task4_ansv.content.controls[1].controls:
-            control.visible = task4_ansv.visible
-        solution_button4.text = "Спрятать решение" if task4_ansv.visible else "Показать решение"
+        solution_button4.controls[1].visible = task4_ansv.visible
+        solution_button4.controls[0].text = "Спрятать решение" if task4_ansv.visible else "Показать решение"
         page.update()
 
-    solution_button1.on_click = show_solution
-    solution_button2.on_click = show_solution2
-    solution_button3.on_click = show_solution3
-    solution_button4.on_click = show_solution4
+    solution_button1.controls[0].on_click = show_solution
+    solution_button2.controls[0].on_click = show_solution2
+    solution_button3.controls[0].on_click = show_solution3
+    solution_button4.controls[0].on_click = show_solution4
 
     # Основной контейнер с задачами
     details1.content = ft.Container(
@@ -351,9 +331,8 @@ def axy_task(details0, page, details1, start_pygame_with_axy1, start_pygame_with
     )
     page.update()
 
-
 def sled_axy(sled_a1, sled_a2, details1, page, start_pygame_with_sled1, start_pygame_with_axy2, e):
-    # Создаем контейнеры для пруфоф, которые будут скрыты/показаны
+    # Создаем контейнеры для пруфоф, которые будут скрыты по умолчанию, но показываются при нажатии на кнопку показать решение
     proof_container1 = ft.Column([], spacing=5)
     proof_container2 = ft.Column([], spacing=5)
 
