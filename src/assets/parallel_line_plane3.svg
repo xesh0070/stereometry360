@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<svg width="155.02400000000006" height="95.80300000000005" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m75.1,92.36l-14.57,-34.86l28.46,-21.83l14.57,34.26l-28.46,22.44l0,-0.01z" fill="#aaffff" fill-opacity="0.8" id="svg_13" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m132.67,86.38" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m127.48,81.3" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m129.19,83.3" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m1.29,58.62l38.02,-22.06l114.08,0l-38.02,22.06l-114.08,0z" fill="#aaaaff" fill-opacity="0.65" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1 0 0 1 0 0)"/>
+  <line fill="none" id="svg_4" opacity="10" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" x1="-43.55" x2="-43.55" y1="51.69" y2="51.3"/>
+  <rect fill="#aaffff" height="0" id="svg_16" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="20.28" y="51.32"/>
+  <rect fill="#aaffff" height="0" id="svg_22" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="6.5" y="58.89"/>
+  <rect fill="#aaffff" height="0" id="svg_23" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="5.15" y="62.4"/>
+  <rect fill="#aaffff" height="0" id="svg_24" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="2.17" y="72.67"/>
+  <rect fill="#aaffff" height="0" id="svg_25" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="21.8" y="-0.3"/>
+  <rect fill="#aaffff" height="0" id="svg_26" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="23.28" y="-10.3"/>
+  <rect fill="#aaffff" height="0" id="svg_27" opacity="5" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" width="0" x="67.17" y="-29.59"/>
+  <path d="m60.61,58.49l-14.57,-34.86l28.46,-21.83l14.57,34.26l-28.46,22.44l0,-0.01z" fill="#aaffff" fill-opacity="0.8" id="svg_6" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1 0 0 1 0 0)"/>
+  <line fill="none" id="svg_17" stroke="#bf00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" x1="60.77" x2="89.21" y1="58.44" y2="35.81"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_8" opacity="0.9" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="16.52" xml:space="preserve" y="56.55">α</text>
+  <text fill="#00bfbf" font-family="Serif" font-size="8" font-style="italic" id="svg_14" opacity="0.9" stroke="#bf00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="71.07" xml:space="preserve" y="12.14">β</text>
+  <text fill="#bf00bf" font-family="Serif" font-size="8" font-style="normal" font-weight="normal" id="svg_15" opacity="0.9" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(0.941787 -0.33621 0.33621 0.941787 -22.1982 37.7741)" x="101.8" xml:space="preserve" y="34.43">a</text>
+  <line fill="none" id="svg_2" stroke="#bf00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" transform="matrix(1 0 0 1 0 0)" x1="91.82" x2="110.26" y1="55.63" y2="41.07"/>
+  <text fill="#bf00bf" font-family="Serif" font-size="7" font-style="normal" font-weight="normal" id="svg_3" opacity="0.9" stroke="#00bfbf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(0.941787 -0.33621 0.33621 0.941787 -22.1982 37.7741)" x="118.17" xml:space="preserve" y="47.54">b</text>
+ </g>
+</svg>

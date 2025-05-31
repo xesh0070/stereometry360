@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg width="130.024" height="70" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m149.85,134.85" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m144.66,129.77" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m146.37,131.77" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m1.88,67.93l31,-48.05l93.01,0l-31,48.05l-93.01,0z" fill="#aaaaff" fill-opacity="0.55" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round">bи</path>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_2" opacity="0.9" stroke="#5f00bf" stroke-width="0" text-anchor="middle" transform="rotate(0.772197 12.3457 61.0549) matrix(1.39297 0 0 1.16491 -12.0731 -17.754)" x="17.53" xml:space="preserve" y="70.39">α</text>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_7" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0)" x="107.4" xml:space="preserve" y="7.38">a</text>
+  <line fill="none" id="svg_6" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="47.81" x2="112.33" y1="10.13" y2="9.85"/>
+  <line fill="none" id="svg_3" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="31.44" x2="95.96" y1="42.25" y2="41.97"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_4" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="91.03" xml:space="preserve" y="38.59">b</text>
+ </g>
+</svg>
