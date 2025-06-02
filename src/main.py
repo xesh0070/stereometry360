@@ -37,13 +37,14 @@ from models3d.axy_task3 import run_axy_task3
 from models3d.axy_task4 import run_axy_task4
 
 from catalog_page import get_catalog_container
-from src.theory_part1_axy import axy_task, sled_axy, axy
-from theory_part2 import lines_arrangement, parallel_line_plane, parallel_line, parallel_planes, polyhedrons, perpendicular_line_plane
+from theory_part1_axy import axy_task, sled_axy, axy
+from theory_part2and3 import lines_arrangement, parallel_line_plane, parallel_line, parallel_planes, polyhedrons, perpendicular_line_plane
+from theory_part4 import volumes
+
 
 # Сохранение решённых задач типа 3.
 SOLVED_TASKS_FILE = "solved_tasks.json"
 solved_tasks = set()
-
 def load_solved_tasks():
     global solved_tasks
     try:
@@ -3005,6 +3006,9 @@ def main(page: ft.Page):
     def show_perpendicular_line_plane(e):
         perpendicular_line_plane(e, page, details1)
 
+    def show_volumes(e):
+        volumes(e, page, details1)
+
 
 
 
@@ -3043,10 +3047,9 @@ def main(page: ft.Page):
         dropdown.controls = [
             ft.TextButton(
                 option,
-                on_click=show_axy if option == "• Аксиомы"
-                 else show_axy_task if option == "• Задачи"
-                else show_axy_sled if option == "• Следствия аксиом"
+                on_click=show_axy if option == "• Аксиомы" else show_axy_task if option == "• Задачи" else show_axy_sled if option == "• Следствия аксиом"
                 else show_parallel_line if option =="• Параллельные прямые в пространстве" else show_parallel_line_plane if option == "• Параллельность прямой и плоскости" else show_lines_arrangement if option == "• Взаимное расположение прямых в пространстве" else show_parallel_planes if option == "• Параллельность плоскостей " else show_perpendicular_line_plane if option == "• Перпендикулярность прямой и плоскости "
+                else show_volumes if option == "• Понятие объёма"
                 else show_tip3_cube1 if option == "Куб" else show_tip3_pir1 if option == "Пирамида" else show_tip3_par2 if option == "Параллелепипед" else show_tip3_mngg1 if option == "Объём прямоугольных многогранников" else show_tip3_vprizm1 if option == "Призма (объём)" else show_tip3_sprizm1 if option == "Призма (площадь)" else show_tip3_cyli if option == "Цилиндр (площадь)" else show_tip3_sphere if option == "Сфера и шар" else show_random_task_0 if option == "Случайная задача"
                 else show_tip14_rast if option == "Расстояния" else show_tip14_ygol1 if option == "Углы" else show_tip14_V1 if option == "Объём" else show_tip14_sech1 if option == "Площадь сечения" else None,
 
@@ -3083,7 +3086,7 @@ def main(page: ft.Page):
     )
     container4, hide4 = create_dropdown(
         "2. Параллельность прямых и плоскостей",
-        ["• Параллельные прямые в пространстве", "• Параллельность прямой и плоскости", "• Взаимное расположение прямых в пространстве", "• Параллельность плоскостей ", "• Тетраэдр и параллелепипед"],
+        ["• Параллельные прямые в пространстве", "• Параллельность прямой и плоскости", "• Взаимное расположение прямых в пространстве", "• Параллельность плоскостей ", ],
 
         button_color=ft.Colors.BLACK,
 
@@ -3384,7 +3387,11 @@ def main(page: ft.Page):
                                               width=200),
                             ft.OutlinedButton("Задачи ЕГЭ", on_click=show_catalog_ege,
                                               style=ft.ButtonStyle(color="#6A4C9C"),
-                                              width=200), ]),
+                                              width=200),
+                            ft.OutlinedButton("Теория", on_click=show_teoria,
+                                              style=ft.ButtonStyle(color="#6A4C9C"),
+                                              width=200),
+                        ]),
                     ],
                     spacing=10,
                     alignment=ft.MainAxisAlignment.START,

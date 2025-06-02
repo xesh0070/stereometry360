@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg width="105.024" height="63.80300000000001" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <line fill="none" id="svg_15" stroke="#bf00bf" stroke-dasharray="2,2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" x1="42.13" x2="41.88" y1="61.89" y2="30.92"/>
+  <line fill="none" id="svg_19" stroke="#bf00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" transform="rotate(-175.186 42.1194 60.5178)" x1="42.24" x2="41.99" y1="62.16" y2="58.87"/>
+  <path d="m149.85,134.85" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m144.66,129.77" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m146.37,131.77" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m2,58.61l25.39,-39.49l76.18,0l-25.39,39.49l-76.18,0z" fill="#aaaaff" fill-opacity="0.55" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round"/>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_2" opacity="0.9" stroke="#5f00bf" stroke-width="0" text-anchor="middle" transform="matrix(1.39284 0.018773 -0.0156995 1.1648 -12.8813 -26.2485)" x="17.53" xml:space="preserve" y="70.39">α</text>
+  <line fill="none" id="svg_4" stroke="#bf00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" transform="rotate(180 41.7797 19.0652)" x1="41.91" x2="41.66" y1="33.97" y2="4.16"/>
+  <ellipse cx="41.92" cy="34.18" fill="#3f007f" id="svg_8" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_20" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="45.85" xml:space="preserve" y="10.82">a</text>
+ </g>
+</svg>

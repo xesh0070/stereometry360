@@ -11,14 +11,21 @@ parallel_line3 = "assets/parallel_line3.svg"
 parallel_line_plane1 ="assets/parallel_line_plane1.svg"
 parallel_line_plane2 ="assets/parallel_line_plane2.svg"
 parallel_line_plane3 ="assets/parallel_line_plane3.svg"
+lines_arrangement1 = "assets/lines_arrangement1.svg"
+lines_arrangement3 = "assets/lines_arrangement3.svg"
+theory2_3_4 ="assets/theory2_3_4.svg"
+theory2_3_5 ="assets/theory2_3_5.svg"
+theory3_1_1 ="assets/theory3_1_1.svg"
+theory3_1_0 ="assets/theory3_1_0.svg"
+
 
 def lines_arrangement(e, page, details1):
-    # Создаем контейнеры для доказательств, которые будут скрыты/показаны
+    # Создаем контейнеры для доказательств
     proof_container1 = ft.Column([], spacing=5)
     proof_container2 = ft.Column([], spacing=5)
     proof_container3 = ft.Column([], spacing=5)
 
-    # Доказательства
+    # Доказательства (полностью сохранены)
     doc_1 = ft.Column(
         controls=[
             ft.Text("Дано: Прямые a и b в пространстве.", size=18, weight=ft.FontWeight.BOLD),
@@ -39,17 +46,13 @@ def lines_arrangement(e, page, details1):
 
     doc_2 = ft.Column(
         controls=[
-            ft.Text("Дано: Прямые a и b скрещиваются.", size=18, weight=ft.FontWeight.BOLD),
-            ft.Text("Доказать:", size=18, weight=ft.FontWeight.BOLD),
-            ft.Text("1) Через одну из скрещивающихся прямых можно провести плоскость, параллельную другой прямой.", size=18),
-            ft.Text("2) Такая плоскость единственна.", size=18),
-            ft.Text("Доказательство:", size=18, weight=ft.FontWeight.BOLD),
+            ft.Text("Пусть нам даны две скрещивающиеся прямые АВ и CD. Докажем, что через прямую АВ проходит плоскость, параллельная прямой CD, и притом только одна.",
+                size=18),
             ft.Text(
-                "1. Пусть даны скрещивающиеся прямые a и b. Возьмем произвольную точку M на прямой a.\n"
-                "2. Через точку M проведем прямую b', параллельную прямой b.\n"
-                "3. Прямые a и b' определяют плоскость α. По построению b ∥ b' и b' ⊂ α ⇒ b ∥ α.\n"
-                "4. Единственность следует из того, что через прямую a и точку M проходит единственная плоскость, "
-                "а через точку M можно провести единственную прямую, параллельную b.",
+                "Проведем через точку А прямую АЕ, параллельную прямой DC. По теореме о параллельных прямых, такая прямая существует и единственная. Тогда через две пересекающиеся прямые АВ и АЕ можно провести единственную плоскость α. Так как прямая DC, которая не лежит в плоскости α, параллельна прямой АЕ, лежащей в плоскости α,  значит, что прямая DC параллельна плоскости α, по признаку параллельности прямой и плоскости. Существование доказано.",
+                size=18),
+            ft.Text(
+                "Докажем единственность такой плоскости. Пусть существует другая плоскость β, которая проходит через прямую АВ и параллельна прямой DC. Тогда прямая АЕ пересекает плоскость β, а значит и параллельная ей прямая DC пересекает плоскость β, по лемме. То есть, прямая DC не параллельна плоскости β. Получили противоречие. Следовательно, плоскость α – единственная. Теорема доказана.",
                 size=18),
         ],
         spacing=5,
@@ -77,108 +80,119 @@ def lines_arrangement(e, page, details1):
 
     # Функции для показа/скрытия доказательств
     def toggle_proof1(e):
-        if proof_container1.controls:
-            proof_container1.controls.clear()
-            e.control.text = "Показать доказательство"
-        else:
-            proof_container1.controls.append(doc_1)
-            e.control.text = "Скрыть доказательство"
+        proof_container1.controls.clear() if proof_container1.controls else proof_container1.controls.append(doc_1)
+        e.control.text = "Скрыть доказательство" if proof_container1.controls else "Показать доказательство"
         page.update()
 
     def toggle_proof2(e):
-        if proof_container2.controls:
-            proof_container2.controls.clear()
-            e.control.text = "Показать доказательство"
-        else:
-            proof_container2.controls.append(doc_2)
-            e.control.text = "Скрыть доказательство"
+        proof_container2.controls.clear() if proof_container2.controls else proof_container2.controls.append(doc_2)
+        e.control.text = "Скрыть доказательство" if proof_container2.controls else "Показать доказательство"
         page.update()
 
     def toggle_proof3(e):
-        if proof_container3.controls:
-            proof_container3.controls.clear()
-            e.control.text = "Показать доказательство"
-        else:
-            proof_container3.controls.append(doc_3)
-            e.control.text = "Скрыть доказательство"
+        proof_container3.controls.clear() if proof_container3.controls else proof_container3.controls.append(doc_3)
+        e.control.text = "Скрыть доказательство" if proof_container3.controls else "Показать доказательство"
         page.update()
 
-    # Кнопки для показа доказательств
-    proof_button1 = ft.TextButton(
-        "Показать доказательство",
-        on_click=toggle_proof1,
-        style=ft.ButtonStyle(color="#4E426D")
-    )
-
-    proof_button2 = ft.TextButton(
-        "Показать доказательство",
-        on_click=toggle_proof2,
-        style=ft.ButtonStyle(color="#4E426D")
-    )
-
-    proof_button3 = ft.TextButton(
-        "Показать доказательство",
-        on_click=toggle_proof3,
-        style=ft.ButtonStyle(color="#4E426D")
+    # Создаем ряд с картинками и кнопками (новый элемент)
+    cases_row = ft.Row(
+        controls=[
+            ft.Column(
+                controls=[
+                    ft.Image(
+                        parallel_line1,
+                        width=30,
+                        height=90,
+                        fit=ft.ImageFit.CONTAIN
+                    ),
+                    ft.Text("Параллельные", size=16, weight=ft.FontWeight.BOLD),
+                    ft.ElevatedButton(
+                        text="3D модель",
+                        on_click=lambda e: start_pygame_with_figure(parallel_lines, 70),
+                        style=ft.ButtonStyle(color="#4E426D"),
+                        width=150
+                    )
+                ],
+                spacing=5,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            ),
+            ft.Column(
+                controls=[
+                    ft.Image(
+                        lines_arrangement1,
+                        width=30,
+                        height=90,
+                        fit=ft.ImageFit.CONTAIN
+                    ),
+                    ft.Text("Пересекающиеся", size=16, weight=ft.FontWeight.BOLD),
+                    ft.ElevatedButton(
+                        text="3D модель",
+                        on_click=lambda e: start_pygame_with_figure(intersecting_lines, 70),
+                        style=ft.ButtonStyle(color="#4E426D"),
+                        width=150
+                    )
+                ],
+                spacing=5,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            ),
+            ft.Column(
+                controls=[
+                    ft.Image(
+                        lines_arrangement3,
+                        width=40,
+                        height=100,
+                        fit=ft.ImageFit.CONTAIN
+                    ),
+                    ft.Text("Скрещивающиеся", size=16, weight=ft.FontWeight.BOLD),
+                    ft.ElevatedButton(
+                        text="3D модель",
+                        on_click=lambda e: start_pygame_with_figure(skew_lines, 70),
+                        style=ft.ButtonStyle(color="#4E426D"),
+                        width=150
+                    )
+                ],
+                spacing=5,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            ),
+        ],
+        spacing=30,
+        wrap=True,
+        run_spacing=30,
+        scroll=ft.ScrollMode.AUTO,
+        alignment=ft.MainAxisAlignment.CENTER
     )
 
     details1.content = ft.Container(
         content=ft.Column(
             [
-                ft.Column([ft.Text("Теория стереометрии. Взаимное расположение прямых в пространстве",
-                                   size=12, weight=ft.FontWeight.BOLD),
-                           ft.Text("Взаимное расположение прямых в пространстве", size=28, weight=ft.FontWeight.BOLD)],
-                          spacing=5),
+                ft.Column([
+                    ft.Text("Теория стереометрии. Параллельность прямых и плоскостией: Взаимное расположение прямых в пространстве",
+                            size=12, weight=ft.FontWeight.BOLD),
+                    ft.Text("Взаимное расположение прямых в пространстве",
+                            size=28, weight=ft.FontWeight.BOLD)
+                ], spacing=5),
+
+                ft.Text("Основные случаи взаимного расположения",
+                        size=24, weight=ft.FontWeight.BOLD),
+
+                cases_row,
 
                 ft.ResponsiveRow(
                     controls=[
                         ft.Column(
                             col={"sm": 12, "md": 7},
                             controls=[
-                                ft.Text("Основные случаи взаимного расположения", size=24, weight=ft.FontWeight.BOLD),
-                                ft.Text(
-                                    "В пространстве две прямые могут:\n"
-                                    "1. Лежать в одной плоскости и пересекаться\n"
-                                    "2. Лежать в одной плоскости и быть параллельными\n"
-                                    "3. Не лежать в одной плоскости (скрещиваться)",
-                                    size=20, weight=ft.FontWeight.W_500
-                                ),
-                                proof_button1,
-                                proof_container1,
-                            ],
-                            spacing=5,
-                        ),
-                        ft.Column(
-                            col={"sm": 9, "md": 5},
-                            controls=[
-                                ft.Container(width=10, height=10),
-                                ft.Image(sled_a1, width=30, height=90, fit=ft.ImageFit.CONTAIN),
-                                ft.ElevatedButton(
-                                    "Открыть 3D модель",
-
-                                    style=ft.ButtonStyle(color="#4E426D"),
-                                    width=180
-                                ),
-                            ],
-                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                            spacing=10,
-                        ),
-                    ],
-                    spacing=20,
-                    vertical_alignment=ft.CrossAxisAlignment.START,
-                ),
-
-                ft.ResponsiveRow(
-                    controls=[
-                        ft.Column(
-                            col={"sm": 12, "md": 7},
-                            controls=[
-                                ft.Text("Плоскость, параллельная скрещивающейся прямой", size=24, weight=ft.FontWeight.BOLD),
+                                ft.Text("Плоскость, параллельная скрещивающейся прямой", size=24,
+                                        weight=ft.FontWeight.BOLD),
                                 ft.Text(
                                     "Через каждую из двух скрещивающихся прямых проходит плоскость, параллельная другой прямой, и притом только одна.",
                                     size=20, weight=ft.FontWeight.W_500
                                 ),
-                                proof_button2,
+                                ft.TextButton(
+                                    "Показать доказательство",
+                                    on_click=toggle_proof2,
+                                    style=ft.ButtonStyle(color="#4E426D")
+                                ),
                                 proof_container2,
                             ],
                             spacing=5,
@@ -187,10 +201,9 @@ def lines_arrangement(e, page, details1):
                             col={"sm": 9, "md": 5},
                             controls=[
                                 ft.Container(width=10, height=10),
-                                ft.Image(sled_a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                ft.Image(theory2_3_4, width=300, height=200, fit=ft.ImageFit.CONTAIN),
                                 ft.ElevatedButton(
                                     "Открыть 3D модель",
-
                                     style=ft.ButtonStyle(color="#4E426D"),
                                     width=180
                                 ),
@@ -202,6 +215,7 @@ def lines_arrangement(e, page, details1):
                     spacing=20,
                     vertical_alignment=ft.CrossAxisAlignment.START,
                 ),
+
                 ft.ResponsiveRow(
                     controls=[
                         ft.Column(
@@ -212,7 +226,11 @@ def lines_arrangement(e, page, details1):
                                     "Если две прямые параллельны третьей прямой, то они параллельны между собой.",
                                     size=20, weight=ft.FontWeight.W_500
                                 ),
-                                proof_button3,
+                                ft.TextButton(
+                                    "Показать доказательство",
+                                    on_click=toggle_proof3,
+                                    style=ft.ButtonStyle(color="#4E426D")
+                                ),
                                 proof_container3,
                             ],
                             spacing=5,
@@ -221,10 +239,9 @@ def lines_arrangement(e, page, details1):
                             col={"sm": 9, "md": 5},
                             controls=[
                                 ft.Container(width=10, height=10),
-                                ft.Image(sled_a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                ft.Image(theory2_3_5, width=300, height=200, fit=ft.ImageFit.CONTAIN),
                                 ft.ElevatedButton(
                                     "Открыть 3D модель",
-
                                     style=ft.ButtonStyle(color="#4E426D"),
                                     width=180
                                 ),
@@ -237,13 +254,12 @@ def lines_arrangement(e, page, details1):
                     vertical_alignment=ft.CrossAxisAlignment.START,
                 ),
             ],
-            spacing=15,
+            spacing=20,
             scroll=ft.ScrollMode.AUTO
         ),
         expand=True
     )
     page.update()
-
 def parallel_line_plane(e, page, details1):
         # Создаем контейнеры для доказательств, которые будут скрыты/показаны
         proof_container1 = ft.Column([], spacing=5)
@@ -361,7 +377,7 @@ def parallel_line_plane(e, page, details1):
             content=ft.Column(
                 [
                     ft.Column([
-                        ft.Text("Теория стереометрии. Параллельность прямой и плоскости",
+                        ft.Text("Теория стереометрии. Параллельность прямых и плоскостией: Параллельность прямой и плоскости",
                                 size=12, weight=ft.FontWeight.BOLD),
                         ft.Text("Параллельность прямой и плоскости", size=28, weight=ft.FontWeight.BOLD)
                     ], spacing=5),
@@ -593,7 +609,7 @@ def parallel_line(e, page, details1):
             details1.content = ft.Container(
                 content=ft.Column(
                     [
-                        ft.Column([ft.Text("Теория стереометрии. Аксиомы стереометрии: Параллельные прямые в пространстве",
+                        ft.Column([ft.Text("Теория стереометрии. Параллельность прямых и плоскостией: Параллельные прямые в пространстве",
                                            size=12, weight=ft.FontWeight.BOLD),
                                    ft.Text("Параллельные прямые в пространстве", size=28, weight=ft.FontWeight.BOLD)],
                                   spacing=5),
@@ -842,7 +858,7 @@ def parallel_planes(e, page, details1):
         content=ft.Column(
             [
                 ft.Column([
-                    ft.Text("Теория стереометрии. Параллельность плоскостей",
+                    ft.Text("Теория стереометрии. Параллельность прямых и плоскостией: Параллельность плоскостей",
                             size=12, weight=ft.FontWeight.BOLD),
                     ft.Text("Параллельные плоскости", size=28, weight=ft.FontWeight.BOLD)
                 ], spacing=5),
@@ -1257,8 +1273,7 @@ def perpendicular_line_plane(e, page, details1):
     # Доказательства
     doc_1 = ft.Column(
         controls=[
-            ft.Text("Определение:", size=18, weight=ft.FontWeight.BOLD),
-            ft.Text("Прямая называется перпендикулярной плоскости, если она перпендикулярна всем прямым в этой плоскости.", size=18),
+
             ft.Text("Доказательство признака перпендикулярности:", size=18, weight=ft.FontWeight.BOLD),
             ft.Text(
                 "Если прямая перпендикулярна двум пересекающимся прямым, лежащим в плоскости, то она перпендикулярна этой плоскости.\n\n"
@@ -1352,11 +1367,43 @@ def perpendicular_line_plane(e, page, details1):
         content=ft.Column(
             [
                 ft.Column([
-                    ft.Text("Теория стереометрии. Перпендикулярность прямой и плоскости",
+                    ft.Text("Теория стереометрии. Параллельность прямых и плоскостией: Перпендикулярность прямой и плоскости",
                            size=12, weight=ft.FontWeight.BOLD),
                     ft.Text("Перпендикулярность прямой и плоскости",
                            size=28, weight=ft.FontWeight.BOLD)
                 ], spacing=5),
+
+                ft.ResponsiveRow(
+                    controls=[
+                        ft.Column(
+                            col={"sm": 12, "md": 7},
+                            controls=[
+                                ft.Text("Определение", size=24, weight=ft.FontWeight.BOLD),
+                                ft.Text(
+                                    "Прямая называется перпендикулярной плоскости, если она перпендикулярна всем прямым в этой плоскости.",
+                                    size=20, weight=ft.FontWeight.W_500),
+
+                            ],
+                            spacing=5,
+                        ),
+                        ft.Column(
+                            col={"sm": 9, "md": 5},
+                            controls=[
+                                ft.Container(width=10, height=10),
+                                ft.Image(theory3_1_0, width=70, height=140, fit=ft.ImageFit.CONTAIN),
+                                ft.ElevatedButton(
+                                    "Открыть 3D модель",
+
+                                    style=ft.ButtonStyle(color="#4E426D"),
+                                    width=180
+                                ),
+                            ],
+                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                            spacing=10,
+                        ),
+                    ],
+                    spacing=20,
+                ),
 
                 ft.ResponsiveRow(
                     controls=[
@@ -1377,41 +1424,7 @@ def perpendicular_line_plane(e, page, details1):
                             col={"sm": 9, "md": 5},
                             controls=[
                                 ft.Container(width=10, height=10),
-                                ft.Image(a1, width=30, height=90, fit=ft.ImageFit.CONTAIN),
-                                ft.ElevatedButton(
-                                    "Открыть 3D модель",
-                                    # on_click=lambda e: start_pygame_with_perp1(e),
-                                    style=ft.ButtonStyle(color="#4E426D"),
-                                    width=180
-                                ),
-                            ],
-                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                            spacing=10,
-                        ),
-                    ],
-                    spacing=20,
-                ),
-
-                ft.ResponsiveRow(
-                    controls=[
-                        ft.Column(
-                            col={"sm": 12, "md": 7},
-                            controls=[
-                                ft.Text("Единственность перпендикуляра", size=24, weight=ft.FontWeight.BOLD),
-                                ft.Text(
-                                    "Через любую точку пространства проходит единственная прямая, "
-                                    "перпендикулярная данной плоскости.",
-                                    size=20, weight=ft.FontWeight.W_500),
-                                proof_button2,
-                                proof_container2,
-                            ],
-                            spacing=5,
-                        ),
-                        ft.Column(
-                            col={"sm": 9, "md": 5},
-                            controls=[
-                                ft.Container(width=10, height=10),
-                                ft.Image(a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                ft.Image(theory3_1_1, width=70, height=140, fit=ft.ImageFit.CONTAIN),
                                 ft.ElevatedButton(
                                     "Открыть 3D модель",
 
@@ -1445,7 +1458,7 @@ def perpendicular_line_plane(e, page, details1):
                             col={"sm": 9, "md": 5},
                             controls=[
                                 ft.Container(width=10, height=10),
-                                ft.Image(a2, width=30, height=90, fit=ft.ImageFit.CONTAIN),
+                                ft.Image(theory3_1_1, width=70, height=140, fit=ft.ImageFit.CONTAIN),
                                 ft.ElevatedButton(
                                     "Открыть 3D модель",
 

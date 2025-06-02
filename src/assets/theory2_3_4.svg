@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<svg width="130.024" height="68.80300000000001" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m149.85,134.85" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m144.66,129.77" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m146.37,131.77" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m2.88,66.28l31,-48.05l93.01,0l-31,48.05l-93.01,0z" fill="#aaaaff" fill-opacity="0.55" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round"/>
+  <line fill="none" id="svg_3" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="33.54" x2="96.37" y1="59.63" y2="26.36"/>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_2" opacity="0.9" stroke="#5f00bf" stroke-width="0" text-anchor="middle" transform="rotate(0.772197 14.1712 59.3453) matrix(1.39297 0 0 1.16491 -10.2476 -19.5278)" x="17.53" xml:space="preserve" y="70.39">α</text>
+  <line fill="none" id="svg_9" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="36.13" x2="104.29" y1="32.16" y2="31.76"/>
+  <ellipse cx="85.96" cy="31.94" fill="#3f007f" id="svg_8" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="47.15" cy="31.99" fill="#3f007f" id="svg_11" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_12" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="85.51" xml:space="preserve" y="28.92">A</text>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_13" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="48.68" xml:space="preserve" y="28.72">E</text>
+  <ellipse cx="47.68" cy="52.14" fill="#3f007f" id="svg_4" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_5" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="50.31" xml:space="preserve" y="60.76">B</text>
+  <line fill="none" id="svg_6" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="22.33" x2="90.5" y1="11.22" y2="10.82"/>
+  <ellipse cx="79.85" cy="10.84" fill="#3f007f" id="svg_10" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="30.57" cy="11.23" fill="#3f007f" id="svg_14" rx="0.32" ry="0.25" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_15" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="34.3" xml:space="preserve" y="8.09">C</text>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_16" stroke="#3f007f" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="83.3" xml:space="preserve" y="7.22">D</text>
+ </g>
+</svg>
