@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg width="130.024" height="75.803" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 10.825 4.045 139.024 130.803" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <line fill="none" id="svg_9" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.25" x1="107.47" x2="103.83" y1="66.17" y2="54.32"/>
+  <line fill="none" id="svg_8" stroke="#38d1d1" stroke-dasharray="2,2" stroke-linecap="round" stroke-width="1.2" x1="106.38" x2="98.21" y1="62.64" y2="36.41"/>
+  <path d="m149.85,134.85" fill="none" id="svg_29" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m144.66,129.77" fill="none" id="svg_30" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m146.37,131.77" fill="none" id="svg_31" stroke="#0A990A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="1.25"/>
+  <path d="m1.62,67.59l31,-48.05l93.01,0l-31,48.05l-93.01,0z" fill="#aaaaff" fill-opacity="0.55" id="svg_1" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round">bи</path>
+  <line fill="none" id="svg_3" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="33.76" x2="85.32" y1="56.27" y2="28.64"/>
+  <text fill="#3f007f" font-family="Serif" font-size="8" font-style="italic" id="svg_2" opacity="0.9" stroke="#5f00bf" stroke-width="0" text-anchor="middle" transform="rotate(0.772197 12.7915 60.3421) matrix(1.39297 0 0 1.16491 -11.6346 -18.5174)" x="17.53" xml:space="preserve" y="70.39">α</text>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_7" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="80.59" xml:space="preserve" y="28.32">a</text>
+  <line fill="none" id="svg_4" stroke="#38d1d1" stroke-linecap="round" stroke-width="1.2" x1="98.63" x2="87.59" y1="37.91" y2="2.64"/>
+  <text fill="#3f007f" font-family="Serif" font-size="9" font-style="italic" id="svg_5" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" x="92.45" xml:space="preserve" y="7.2">b</text>
+  <ellipse cx="99.09" cy="39.54" fill="#aaaaff" fill-opacity="0.55" id="svg_6" rx="0.51" ry="0.32" stroke="#5f00bf" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+</svg>
